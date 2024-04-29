@@ -17,26 +17,27 @@ import {
 } from "../ui/drawer";
 import { Button } from "../ui/Button";
 
-const NewsHighlights = () => {
+const NewsHighlights = (articles) => {
   const [news, setNews] = useState([]);
   const [searchKeyword, setSearchKeyword] = useState("");
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSource, setSelectedSource] = useState("");
 
-  const getAPI = async () => {
+  const getAPI = async (articles) => {
+    console.log(articles);
     let apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=36cbecce39fc43b3b7e8be41ab9f5ca0`;
 
     if (searchKeyword) {
-      apiUrl += `&q=${encodeURIComponent(searchKeyword)}`;
+      apiUrl += `&q=${encodeURIComponent(searchKeyword + articles)}`;
     }
 
     if (selectedDate) {
       apiUrl += `&from=${selectedDate.toISOString().split("T")[0]}`;
     }
 
-    if (selectedCategory) {
-      apiUrl += `&category=${selectedCategory}`;
+    if (articles) {
+      apiUrl += `&category=${articles.news}`;
     }
 
     if (selectedSource) {
@@ -62,8 +63,8 @@ const NewsHighlights = () => {
   };
 
   useEffect(() => {
-    getAPI();
-  }, [searchKeyword, selectedDate, selectedCategory, selectedSource]);
+    getAPI(articles);
+  }, [searchKeyword, selectedDate, selectedCategory, selectedSource, articles]);
 
   const [drawrdata, setDrawrData] = useState([]);
 
