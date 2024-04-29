@@ -69,15 +69,15 @@ const NewsHighlights = () => {
 
   return (
     <Drawer>
-      <div className="flex gap-2">
-        <div className="max-w-[70%] border-r pr-4  border-neutral-700">
+      <div className="flex gap-2 px-3">
+        <div className="lg:max-w-[70%] w-full  lg:border-r pr-4  border-neutral-700">
           {/* Search and filtering section */}
           <div className=" flex m-3 gap-3">
             <DatePicker
               selected={selectedDate}
               onChange={(date) => setSelectedDate(date)}
               placeholderText="Select a date"
-              className="border border-gray-300 px-3 py-2 rounded-md w-full mt-2"
+              className="border border-gray-300 px-3 py-3 rounded-md w-full mt-2"
             />{" "}
             <Input
               type="text"
@@ -92,14 +92,14 @@ const NewsHighlights = () => {
           {news?.map((item, index) => (
             <>
               {item && item.description && item?.urlToImage && (
-                <div className=" flex w-full border-b border-neutral-500 py-6 ">
-                  <div className="rounded-md flex  gap-4 ">
+                <div className=" flex  w-full border-b border-neutral-500 py-6 ">
+                  <div className="rounded-md flex flex-col-reverse  lg:flex-row  gap-4 ">
                     <div className="flex flex-col gap-2">
                       <h3
                         className={`${
                           index > 0
-                            ? "text-2xl text-neutral-300"
-                            : "text-4xl text-neutral-200"
+                            ? "text-xl lg:text-2xl text-neutral-300"
+                            : " text-2xl lg:text-4xl text-neutral-200"
                         } font-semibold `}
                       >
                         {item?.title}
@@ -116,7 +116,12 @@ const NewsHighlights = () => {
                       </p>
                     </div>
                     {item?.urlToImage && (
-                      <img src={item?.urlToImage} width={500} height={600} />
+                      <img
+                        src={item?.urlToImage}
+                        width={500}
+                        height={600}
+                        className="w-full lg:w-[500px] object-cover"
+                      />
                     )}
                   </div>
                 </div>
@@ -125,7 +130,7 @@ const NewsHighlights = () => {
           ))}
         </div>
 
-        <div className="max-w-[30%] pt-6 border-neutral-700">
+        <div className="max-w-[30%] hidden lg:block pt-6 border-neutral-700">
           {/* Search and filtering section */}
           <div className="">
             {/* <DatePicker
