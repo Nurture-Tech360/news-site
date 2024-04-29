@@ -29,7 +29,7 @@ const NewsHighlights = (articles) => {
     let apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=36cbecce39fc43b3b7e8be41ab9f5ca0`;
 
     if (searchKeyword) {
-      apiUrl += `&q=${encodeURIComponent(searchKeyword + articles)}`;
+      apiUrl += `&q=${encodeURIComponent(searchKeyword)}`;
     }
 
     if (selectedDate) {
