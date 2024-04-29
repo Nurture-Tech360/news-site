@@ -1,4 +1,3 @@
-
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
@@ -78,20 +77,20 @@ const NewsHighlights = () => {
       <div className="flex gap-2">
         <div className="max-w-[70%] border-r pr-4  border-neutral-700">
           {/* Search and filtering section */}
-          <div className="">
-            {/* <DatePicker
-          selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
-          placeholderText="Select a date"
-          className="border border-gray-300 px-3 py-2 rounded-md w-full mt-2"
-        />{" "}
-        <Input
-          type="text"
-          placeholder="Search articles..."
-          value={searchKeyword}
-          onChange={(e) => setSearchKeyword(e.target.value)}
-          className="border border-gray-300 px-3 py-2 rounded-md w-full"
-        /> */}
+          <div className=" flex m-3 gap-3">
+            <DatePicker
+              selected={selectedDate}
+              onChange={(date) => setSelectedDate(date)}
+              placeholderText="Select a date"
+              className="border border-gray-300 px-3 py-2 rounded-md w-full mt-2"
+            />{" "}
+            <Input
+              type="text"
+              placeholder="Search articles..."
+              value={searchKeyword}
+              onChange={(e) => setSearchKeyword(e.target.value)}
+              className="border text-white border-gray-300 px-3 py-2 rounded-md w-full"
+            />
             {/* Add other input fields for filtering */}
           </div>
           {/* News articles section */}
