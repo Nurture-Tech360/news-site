@@ -67,11 +67,6 @@ const NewsHighlights = () => {
 
   const [drawrdata, setDrawrData] = useState([]);
 
-  const [goal, setGoal] = React.useState(350);
-
-  function onClick(adjustment: number) {
-    setGoal(Math.max(200, Math.min(400, goal + adjustment)));
-  }
   return (
     <Drawer>
       <div className="flex gap-2">
