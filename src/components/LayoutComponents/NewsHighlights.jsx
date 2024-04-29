@@ -77,14 +77,14 @@ const NewsHighlights = () => {
               selected={selectedDate}
               onChange={(date) => setSelectedDate(date)}
               placeholderText="Select a date"
-              className="border border-gray-300 px-3 py-3 rounded-md w-full mt-2"
+              className="border border-gray-300 px-3 py-3 h-10 rounded-md w-full "
             />{" "}
             <Input
               type="text"
               placeholder="Search articles..."
               value={searchKeyword}
               onChange={(e) => setSearchKeyword(e.target.value)}
-              className="border text-white border-gray-300 px-3 py-2 rounded-md w-full"
+              className="border text-white border-gray-300 px-3 h-10 py-2 rounded-md w-full"
             />
             {/* Add other input fields for filtering */}
           </div>
