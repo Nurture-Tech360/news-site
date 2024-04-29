@@ -37,7 +37,7 @@ const NewsHighlights = (articles) => {
     }
 
     if (articles) {
-      apiUrl += `&category=${articles.news}`;
+      apiUrl += `&articles=${articles.news}`;
     }
 
     if (selectedSource) {
